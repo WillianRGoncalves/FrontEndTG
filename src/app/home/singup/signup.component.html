@@ -1,0 +1,67 @@
+
+    <h4 class="text-center">Registre-se</h4>
+
+    <form #form="ngForm" [formGroup]="signupForm" class="form mt-4" (submit)="signup(cursosselect.value)">
+
+        <div class="form-group">
+            <input formControlName="nomeUsuario" class="form-control" placeholder="Nome do Usuário">
+            <ap-vmessage 
+                *ngIf="signupForm.get('nomeUsuario').errors?.required&& (form.submitted || signupForm.get('nomeUsuario').touched)"
+                text="Nome do Usuário é obrigatório!">
+            </ap-vmessage>
+            <ap-vmessage 
+                *ngIf="signupForm.get('nomeUsuario').errors?.minlength && (form.submitted || signupForm.get('nomeUsuario').touched)"
+                text="Tamanho mínimo é 2">
+            </ap-vmessage>
+            <ap-vmessage 
+                *ngIf="signupForm.get('nomeUsuario').errors?.maxlength && (form.submitted || signupForm.get('nomeUsuario').touched)"
+                text="Tamanho máximo é 30">
+            </ap-vmessage>
+            <ap-vmessage 
+                *ngIf="signupForm.get('nomeUsuario').errors?.lowerCase && (form.submitted || signupForm.get('nomeUsuario').touched)"
+                text="Must be lower case">
+            </ap-vmessage>
+
+            <ap-vmessage 
+                text="nomeUsuario already taken" 
+                *ngIf="signupForm.get('nomeUsuario').errors?.nomeUsuarioTaken">
+            </ap-vmessage> 
+            <small *ngIf="signupForm.get('nomeUsuario').valid" class="text-success">User available</small>
+        </div>
+
+        <div class="form-group">
+            <input formControlName="senha" type="password" class="form-control" placeholder="Senha">
+            <ap-vmessage 
+                *ngIf="signupForm.get('senha').errors?.required && (form.submitted || signupForm.get('senha').touched)"
+                text="Senha é obrigatório!">
+            </ap-vmessage>
+            <ap-vmessage 
+                *ngIf="signupForm.get('senha').errors?.minlength && (form.submitted || signupForm.get('senha').touched)"
+                text="Tamanho mínimo é 8">
+            </ap-vmessage>
+            <ap-vmessage 
+                *ngIf="signupForm.get('senha').errors?.maxlength && (form.submitted || signupForm.get('senha').touched)"
+                text="Tamanho máximo é 18">
+            </ap-vmessage>
+
+            <ap-vmessage 
+                *ngIf="signupForm.errors?.nomeUsuariosenha && form.submitted"
+                text="Nome de usuário e senha devem ser diferentes">
+            </ap-vmessage>
+
+        </div>
+
+        <div class="form-group">
+            <select #cursosselect [(ngModel)]="selectedValue" [formControl]="signupForm" class="form-control">
+                <option *ngIf="(cursos$ | async) as cursos">Escolha um curso<option>
+                <option *ngFor="let curso of cursos" [label]= curso.nome [value]=curso.cursoId>
+
+                </option>
+            </select>
+        </div>
+
+        <button class="btn btn-primary btn-block">Register</button>
+
+        <p>Já é um usuário? <a [routerLink]="['']">Faça seu Login</a></p>
+
+    </form>

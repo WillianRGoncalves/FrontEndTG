@@ -1,0 +1,39 @@
+
+<h4>Faça Seu Login</h4>
+
+<form [formGroup]="loginForm" class="form mt-4" (submit)="login()">
+
+    <div class="form-group">
+        <input #nomeUsuarioInput
+            formControlName="nomeUsuario" 
+            class="form-control" 
+            placeholder="Nome do Usuário" 
+            autofocus>
+        <ap-vmessage 
+            *ngIf="loginForm.get('nomeUsuario').errors?.required"
+            text="Nome do Usuário é obrigatório!">
+        </ap-vmessage>        
+    </div>
+
+    <div class="form-group">
+        <input
+            formControlName="senha" 
+            type="password"
+            class="form-control" 
+            placeholder="senha">
+        <ap-vmessage
+            *ngIf="loginForm.get('senha').errors?.required"
+            text="senha é obrigatório!">
+        </ap-vmessage>               
+    </div>
+
+    <button 
+        [disabled]="loginForm.invalid" 
+        type="submit" 
+        class="btn btn-primary btn-block">
+        login
+    </button>
+
+</form>
+
+<p>Ainda não é um usuário? <a [routerLink]="['signup']">Registre-se agora</a></p>

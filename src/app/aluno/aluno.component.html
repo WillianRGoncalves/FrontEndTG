@@ -1,0 +1,30 @@
+
+<div class="container">
+    <form [formGroup]="trabalhoForm" class="row" (submit)="cadastrarTrabalho()">
+      <div class="col-md-6 text-center">
+        
+      </div>
+  
+      <div class="col-md-6">
+        <h4>Realize o Cadastro do seu Trabalho de Graduação</h4>
+        <div class="form-group">
+            <input #tituloTrabalhoInput
+            formControlName="titulo" 
+            class="form-control" 
+            placeholder="Título do trabalho de Graduação" 
+            autofocus>
+        </div>
+  
+        <div class="form-group">
+            <textarea 
+            formControlName="descricao"
+            class="form-control form-control-sm" 
+            placeholder="Descrição do Trabalho de Graduação"></textarea>
+        </div>
+  
+        <button type="submit" class="btn btn-primary btn-block">
+          Cadastro
+        </button>
+      </div>
+    </form>
+  </div>
