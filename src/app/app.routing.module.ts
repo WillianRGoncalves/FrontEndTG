@@ -5,6 +5,7 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { AuthGuard } from './core/auth/auth.guard';
 import { GlobalErrorComponent } from './errors/global-error/global-error.component';
 import { AlunoComponent } from './aluno/aluno.component';
+import { AcompanhamentotrabalhoComponent } from './acompanhamentotrabalho/acompanhamentotrabalho.component';
 
 const routes: Routes = [
     {
@@ -19,7 +20,11 @@ const routes: Routes = [
     { 
         path: 'aluno',
         component: AlunoComponent
-    },               
+    },   
+    { 
+        path: 'acompanhamento',
+        component: AcompanhamentotrabalhoComponent
+    },              
     { 
         path: 'error', 
         component: GlobalErrorComponent,

@@ -9,9 +9,6 @@ import { SignUpService } from './signup.service';
 import { PlatformDetectorService } from '../../core/plataform-detector/platform-detector.service';
 import { nomeUsuariosenha } from './nomeUsuario-senha.validator';
 import { CursoPesquisa } from 'src/app/core/cursos/cursopesquisa';
-import { Observable } from 'rxjs';
-
-
 
 @Component({
     templateUrl: './signup.component.html',
@@ -22,7 +19,7 @@ export class SignUpComponent implements OnInit {
     signupForm: FormGroup;
     cursos: CursoPesquisa[];
     public selectedValue;
-    @ViewChild('emailInput') emailInput: ElementRef<HTMLInputElement>;
+    
 
     
     constructor(

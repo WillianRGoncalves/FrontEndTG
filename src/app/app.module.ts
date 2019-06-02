@@ -9,7 +9,7 @@ import { ErrorsModule } from './errors/errors.module';
 import { CoreModule } from './core/core.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlunoModule } from './aluno/aluno.module';
-import { AlunoService } from './aluno/aluno.service';
+import { AcompanhamentoTrabalhoModule } from './acompanhamentotrabalho/acompanhamentotrabalho.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +23,7 @@ import { AlunoService } from './aluno/aluno.service';
     HttpClientModule,
     ReactiveFormsModule,
     AlunoModule,
+    AcompanhamentoTrabalhoModule
 
   ],
   providers: [],

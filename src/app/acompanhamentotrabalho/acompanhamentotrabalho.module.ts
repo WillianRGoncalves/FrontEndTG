@@ -3,14 +3,13 @@ import { ReactiveFormsModule, FormsModule }  from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { VMessageModule } from '../shared/components/vmessage/vmessage.module';
 import { RouterModule } from '@angular/router';
-import { AlunoComponent } from './aluno.component';
-
+import { AcompanhamentotrabalhoComponent } from './acompanhamentotrabalho.component';
 
 
 
 @NgModule({
     declarations: [ 
-        AlunoComponent,
+        AcompanhamentotrabalhoComponent,
     ],
     imports: [ 
         CommonModule, 
@@ -24,4 +23,4 @@ import { AlunoComponent } from './aluno.component';
         
     ]
 })
-export class AlunoModule { }
+export class AcompanhamentoTrabalhoModule { }

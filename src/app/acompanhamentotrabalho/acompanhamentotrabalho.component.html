@@ -1,0 +1,38 @@
+
+<div class="container">
+  <form class="row" >
+    <div class="col-md-6 text-center">
+      
+    </div>
+    <div class="col-md-6 text-center">
+        <h4>Acompanhamento</h4>
+        <form #form="ngForm" [formGroup]="acompanhamentoForm" class="form mt-4" (submit)="geraAcompanhamento()">
+            <table mdbTable striped="true">
+                <thead>
+                  <tr>
+                    <th scope="col">Capítulo</th>
+                    <th scope="col">Em Análise</th>
+                    <th scope="col">Concluído</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr mdbTableCol *ngFor="let capitulo of capitulos">
+                    <td>{{capitulo.nome}}</td>
+                    <td><input id = {{capitulo.nome}} type="checkbox" [name] = capitulo.nome ></td>
+                    <td><input id = {{capitulo.nome}} type="checkbox" [name] = capitulo.nome ></td>
+                  </tr>
+                </tbody>
+            </table>
+
+
+          <button type="submit" class="btn btn-primary btn-block">Concluir</button>
+        </form>
+          
+      
+    </div>
+    
+
+    
+  </form>
+</div>
+
