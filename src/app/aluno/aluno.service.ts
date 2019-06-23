@@ -13,11 +13,11 @@ export class AlunoService {
     private http: HttpClient,
     ) { }
 
-  cadastro(nome: string, cursoId: string) {
+  cadastro(nome: string, descricao: String, cursoId: number, nomeUsuario: String) {
     return this.http
       .post(
         API_URL + '/trabalhos', 
-        { cursoId, nome }, 
+        {nome, cursoId, descricao,nomeUsuario }, 
         { observe: 'response'} 
       )
       .pipe(tap(res => {

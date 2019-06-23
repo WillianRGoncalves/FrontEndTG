@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 import { UserService } from '../user/user.service';
+import { Usuario } from '../modelo/user/usuario';
 
 const API_URL = 'http://localhost:8080';
 
@@ -29,5 +30,9 @@ export class AuthService {
         this.userService.setToken(authToken);
         console.log(`User ${nome} authenticated with token ${authToken}`);
       }));
+  }
+
+  buscaUsuario(nome:string){
+    return this.http.get<Usuario>(API_URL + '/usuarios/nome/' + nome);
   }
 }

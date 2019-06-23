@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Capitulo } from '../core/capitulos/capitulo';
+import { Capitulo } from '../core/modelo/capitulos/capitulo';
 
 const API_URL = 'http://localhost:8080';
 

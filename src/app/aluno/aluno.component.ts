@@ -5,6 +5,7 @@ import { PlatformDetectorService } from '../core/plataform-detector/platform-det
 import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 import { AlunoService } from './aluno.service';
+import { Usuario } from '../core/modelo/user/usuario';
 
 @Component({
   selector: 'tg-aluno',
@@ -19,6 +20,7 @@ export class AlunoComponent implements OnInit {
   trabalhoForm: FormGroup;
   private http: HttpClient;
   private API_URL = 'http://localhost:8080';
+  private usuario : Usuario;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -27,6 +29,8 @@ export class AlunoComponent implements OnInit {
     private alunoService: AlunoService) { }
 
 ngOnInit(): void {
+    this.usuario = JSON.parse(sessionStorage.getItem('Usuario'));
+
     this.activatedRoute
         .queryParams
         .subscribe(params => this.fromUrl = params['fromUrl']);
@@ -39,10 +43,10 @@ ngOnInit(): void {
 } 
 cadastrarTrabalho() {
   const nome = this.trabalhoForm.get('titulo').value;
-  const cursoId = this.trabalhoForm.get('descricao').value;
+  const descricao = this.trabalhoForm.get('descricao').value;
 
   this.alunoService
-  .cadastro(nome,cursoId)
+  .cadastro(nome,descricao,this.usuario.curso.cursoId, this.usuario.nome)
   .subscribe(
     () => alert('Cadastrado com sucesso')
     ,

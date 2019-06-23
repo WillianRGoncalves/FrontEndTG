@@ -10,6 +10,7 @@ import { CoreModule } from './core/core.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlunoModule } from './aluno/aluno.module';
 import { AcompanhamentoTrabalhoModule } from './acompanhamentotrabalho/acompanhamentotrabalho.module';
+import { HomeFuncionarioModule } from './homefuncionario/homefuncionario.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AcompanhamentoTrabalhoModule } from './acompanhamentotrabalho/acompanha
     HttpClientModule,
     ReactiveFormsModule,
     AlunoModule,
-    AcompanhamentoTrabalhoModule
+    AcompanhamentoTrabalhoModule,
+    HomeFuncionarioModule
 
   ],
   providers: [],

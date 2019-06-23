@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AcompanhamentoTrabalhoService } from './acompanhamentotrabalho.service';
-import { Capitulo } from '../core/capitulos/capitulo';
+import { Capitulo } from '../core/modelo/capitulos/capitulo';
 import { ActivatedRoute } from '@angular/router';
 import { PlatformDetectorService } from '../core/plataform-detector/platform-detector.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';

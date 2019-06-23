@@ -6,6 +6,7 @@ import { AuthGuard } from './core/auth/auth.guard';
 import { GlobalErrorComponent } from './errors/global-error/global-error.component';
 import { AlunoComponent } from './aluno/aluno.component';
 import { AcompanhamentotrabalhoComponent } from './acompanhamentotrabalho/acompanhamentotrabalho.component';
+import { HomefuncionarioComponent } from './homefuncionario/homefuncionario.component';
 
 const routes: Routes = [
     {
@@ -20,7 +21,11 @@ const routes: Routes = [
     { 
         path: 'aluno',
         component: AlunoComponent
-    },   
+    }, 
+    { 
+        path: 'funcionario',
+        component: HomefuncionarioComponent
+    },    
     { 
         path: 'acompanhamento',
         component: AcompanhamentotrabalhoComponent

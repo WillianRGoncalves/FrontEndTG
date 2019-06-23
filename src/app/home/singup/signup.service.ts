@@ -4,7 +4,8 @@ import { NewUser } from './new-user';
 import { provideForRootGuard } from '@angular/router/src/router_module';
 
 import { environment } from '../../../environments/environment';
-import { CursoPesquisa } from 'src/app/core/cursos/cursopesquisa';
+import { CursoPesquisa } from 'src/app/core/modelo/cursos/cursopesquisa';
+
 
 const API = environment.ApiUrl;
 

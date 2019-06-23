@@ -4,6 +4,7 @@ import { AuthService } from '../../core/auth/auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PlatformDetectorService } from '../../core/plataform-detector/platform-detector.service';
 import { Title } from '@angular/platform-browser';
+import { Usuario } from 'src/app/core/modelo/user/usuario';
 
 @Component({
     templateUrl: './signin.component.html'
@@ -13,6 +14,7 @@ export class SignInComponent implements OnInit {
     fromUrl: string;
     loginForm: FormGroup;
     @ViewChild('nomeUsuarioInput') nomeUsuarioInput: ElementRef<HTMLInputElement>;
+    usuario: Usuario;
     
     constructor(
         private formBuilder: FormBuilder,
@@ -41,7 +43,22 @@ export class SignInComponent implements OnInit {
         this.authService
             .authenticate(nomeUsuario, senha)
             .subscribe(
-                () => this.router.navigateByUrl('/aluno')
+                () => {
+                   this.authService.buscaUsuario(nomeUsuario)
+                   .subscribe(
+                        usuario => {
+                            this.usuario = usuario;
+                            sessionStorage.setItem('Usuario',JSON.stringify(this.usuario));
+                            if(usuario.tipoUsuario == '4'){
+                                this.router.navigateByUrl('/aluno');
+                            }else{
+                                this.router.navigateByUrl('/funcionario'); 
+                            }
+                            
+                        },
+                        err => alert ('Erro ao importar infomações sobre o usuário')
+                    );  
+                }
                 ,
                 err => {
                     console.log(err);

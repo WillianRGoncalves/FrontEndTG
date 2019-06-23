@@ -8,7 +8,8 @@ import { NewUser } from './new-user';
 import { SignUpService } from './signup.service';
 import { PlatformDetectorService } from '../../core/plataform-detector/platform-detector.service';
 import { nomeUsuariosenha } from './nomeUsuario-senha.validator';
-import { CursoPesquisa } from 'src/app/core/cursos/cursopesquisa';
+import { CursoPesquisa } from 'src/app/core/modelo/cursos/cursopesquisa';
+
 
 @Component({
     templateUrl: './signup.component.html',
