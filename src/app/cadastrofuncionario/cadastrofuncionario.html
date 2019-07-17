@@ -1,0 +1,38 @@
+
+<div class="container">
+  <form class="row" >
+    <div class="col-md-6 text-center">
+      
+    </div>
+    <div class="col-md-6 text-center">
+        <h4>Cadastro de Professor e Orientador</h4>
+        <form #form="ngForm" [formGroup]="cadastroForm" class="form mt-4" (submit)="cadastraFuncionarios(professorselect.value, orientadorselect.value)">
+          <div class="form-group">
+            <select #professorselect [(ngModel)]="selectedValue" [formControl]="cadastroForm" class="form-control">
+                <option *ngIf="(usuarios$ | async) as usuarios">Escolha um curso<option>
+                <option *ngFor="let usuario of usuarios" [label]= usuario.nome [value]=usuario.nome>
+
+                </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <select #orientadorselect [(ngModel)]="selectedValue" [formControl]="cadastroForm" class="form-control">
+                <option *ngIf="(usuarios$ | async) as usuarios">Escolha um curso<option>
+                <option *ngFor="let usuario of usuarios" [label]= usuario.nome [value]=usuario.nome>
+
+                </option>
+            </select>
+           </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Enviar Solicitação</button>
+        </form>
+          
+      
+    </div>
+    
+
+    
+  </form>
+</div>
+

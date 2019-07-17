@@ -7,6 +7,7 @@ import { GlobalErrorComponent } from './errors/global-error/global-error.compone
 import { AlunoComponent } from './aluno/aluno.component';
 import { AcompanhamentotrabalhoComponent } from './acompanhamentotrabalho/acompanhamentotrabalho.component';
 import { HomefuncionarioComponent } from './homefuncionario/homefuncionario.component';
+import { CadastroFuncionarioComponent } from './cadastrofuncionario/cadastrofuncionario.component';
 
 const routes: Routes = [
     {
@@ -25,7 +26,11 @@ const routes: Routes = [
     { 
         path: 'funcionario',
         component: HomefuncionarioComponent
-    },    
+    },   
+    { 
+        path: 'cadastroprofessores',
+        component: CadastroFuncionarioComponent
+    },     
     { 
         path: 'acompanhamento',
         component: AcompanhamentotrabalhoComponent

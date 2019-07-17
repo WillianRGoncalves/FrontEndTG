@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AlunoModule } from './aluno/aluno.module';
 import { AcompanhamentoTrabalhoModule } from './acompanhamentotrabalho/acompanhamentotrabalho.module';
 import { HomeFuncionarioModule } from './homefuncionario/homefuncionario.module';
+import { CadastroFuncionarioModule } from './cadastrofuncionario/cadastrofuncionario.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HomeFuncionarioModule } from './homefuncionario/homefuncionario.module'
     ReactiveFormsModule,
     AlunoModule,
     AcompanhamentoTrabalhoModule,
-    HomeFuncionarioModule
+    HomeFuncionarioModule,
+    CadastroFuncionarioModule,
 
   ],
   providers: [],
