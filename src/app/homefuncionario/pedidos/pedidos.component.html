@@ -1,0 +1,26 @@
+
+<h4>Pendências</h4>
+<table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Aluno</th>
+        <th scope="col">Trabalho</th>
+        <th scope="col">Status</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pendencia of pendencias">
+        <td>{{pendencia.nomeUsuario}}</td>
+        <td>{{pendencia.nomeTrabalho}}</td>
+        <td>
+          <select class="form-control">
+            <option>Recusa</option>
+            <option>Aceito</option>
+          </select>
+        </td>
+        <td><button class="btn btn-primary btn-block">Responder</button></td>
+      </tr>
+      
+    </tbody>
+  </table>

@@ -6,7 +6,7 @@ import { AuthGuard } from './core/auth/auth.guard';
 import { GlobalErrorComponent } from './errors/global-error/global-error.component';
 import { AlunoComponent } from './aluno/aluno.component';
 import { AcompanhamentotrabalhoComponent } from './acompanhamentotrabalho/acompanhamentotrabalho.component';
-import { HomefuncionarioComponent } from './homefuncionario/homefuncionario.component';
+import { HomeFuncionarioComponent } from './homefuncionario/homefuncionario.component';
 import { CadastroFuncionarioComponent } from './cadastrofuncionario/cadastrofuncionario.component';
 
 const routes: Routes = [
@@ -25,7 +25,7 @@ const routes: Routes = [
     }, 
     { 
         path: 'funcionario',
-        component: HomefuncionarioComponent
+        loadChildren: './homefuncionario/homefuncionario.module#HomeFuncionarioModule'
     },   
     { 
         path: 'cadastroprofessores',

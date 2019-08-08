@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { PlatformDetectorService } from '../core/plataform-detector/platform-detector.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CadastroFuncionarioService } from './cadastrofuncionarioservice';
 import { Usuario } from '../core/modelo/user/usuario';

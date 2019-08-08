@@ -3,14 +3,15 @@ import { ReactiveFormsModule, FormsModule }  from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { VMessageModule } from '../shared/components/vmessage/vmessage.module';
 import { RouterModule } from '@angular/router';
-import { HomefuncionarioComponent } from './homefuncionario.component';
 
-
-
+import { PedidosComponent } from './pedidos/pedidos.component';
+import { HomeFuncionarioRoutingModule } from './homefuncionario.routing.module';
+import { HomeFuncionarioComponent } from './homefuncionario.component';
 
 @NgModule({
     declarations: [ 
-        HomefuncionarioComponent,
+        PedidosComponent,
+        HomeFuncionarioComponent
     ],
     imports: [ 
         CommonModule, 
@@ -18,9 +19,7 @@ import { HomefuncionarioComponent } from './homefuncionario.component';
         ReactiveFormsModule,
         VMessageModule,
         RouterModule,
-        
-    ],
-    providers: [
+        HomeFuncionarioRoutingModule,
         
     ]
 })
